@@ -6,7 +6,14 @@
 // добавьте в него название (name) например Ryzen 7 3700X
 
 const cpu = {
-
+	producer: 'AMD',
+	amount: 250,
+	family: 'AMD Ryzen 7',
+	name: 'Ryzen 7 3700X',
+	image: 'https://i2.rozetka.ua/goods/1865699/copy_amd_fx_series_fx_9590_fd9590fhhkwof_58abf05e14fdc_58abfc46c2b65_58abff06c94bd_images_1865699744.jpg',
+	sale: function sale(p) {
+		return this.amount * p / 100
+	}
 }
 
 //Task 2
@@ -18,7 +25,17 @@ const cpu = {
 // name = Hynix DDR4-2666
 // family = DDR4
 
-// создаем memory тут.
+let memory = {
+	__proto__: cpu,
+	memory: 2048
+}
+memory.producer = 'Hynix'
+memory.amount = 60
+memory.name = 'Hynix DDR4-2666'
+memory.family = 'DDR4'
+memory.image = 'https://i2.rozetka.ua/goods/17090881/189441988_images_17090881613.jpg'
+
+
 
 
 //Task 3.
