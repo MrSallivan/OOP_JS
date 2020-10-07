@@ -6,7 +6,14 @@ class Button {
 		this.value = value
 	}
 
-	render() {
 
+	render() {
+		const button = document.createElement('button')
+		button.style.width = this.width
+		button.style.height = this.height
+		button.style.background = this.background
+		button.setAttribute('value', this.value)
+		button.innerText = this.value
+		return button
 	}
 }
