@@ -1,0 +1,1 @@
+console.log(Validate.isNumber(50))
