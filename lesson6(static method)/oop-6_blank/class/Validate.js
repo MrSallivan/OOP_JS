@@ -31,10 +31,10 @@ class Validate {
 	static toMoney(b) {
 		let x = String(b).split('')
 		let c = 0
-		for (let i = x.length - 1; i < x.length; i--) {
+		for (let i = x.length - 1; i >= 0; i--) {
 			c++
-			if (c === 2 ) {
-				
+			if (c === 3 ) {
+				x.splice(i, 0, ' ')
 			}
 		}
 		return console.log(x)
