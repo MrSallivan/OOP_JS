@@ -3,12 +3,40 @@ class Validate {
 		this.a = a;
 	}
 	static isNumber(b) {
-		if (b.match(/^-{0,1}\d+$/)) {
-			console.log('valid integer(positive or negative)')
-		} else if (b.match(/^\d+\.\d+$/)) {
-			console.log('valid float')
-		} else {
-			console.log('not valid number')
+		return (typeof(b) == 'number') ? true : false
+	}
+
+	static isInt(b) {
+		return (b ^ 0) === b;
+	}
+	static isFloat(b) {
+		return (b ^ 0) !== b ? true : false
+	}
+	static isChar(b) {
+		return (typeof (b) == 'string') ? b.length === 1 ? true : false :false
+	}
+
+	static isString(b) {
+		return (typeof (b) == 'string') ? true : false
+	}
+
+	static isBoolean(b) {
+		return (typeof (b) == 'boolean') ? true : false
+	}
+
+	static isArray(b) {
+		return (typeof (b) == 'object') ? true : false
+	}	
+
+	static toMoney(b) {
+		let x = String(b).split('')
+		let c = 0
+		for (let i = x.length - 1; i < x.length; i--) {
+			c++
+			if (c === 2 ) {
+				
+			}
 		}
+		return console.log(x)
 	}
 }
