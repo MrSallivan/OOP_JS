@@ -38,8 +38,7 @@ class Validate {
 			}
 		}
 		let rez = x.join('') + ".00"
-
-
+		
 		return rez
 	}
 }
