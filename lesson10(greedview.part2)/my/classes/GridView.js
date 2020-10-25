@@ -14,7 +14,7 @@ _	* @param[array] atribute //управляем, что выводим и как
 		this._headerClass = []
 		this._tableClass = []
 		this._element = 'body'
-		this.atribute = []
+		this.atribute = {}
 	}
 
 /**
@@ -56,6 +56,7 @@ _	* @param[array] atribute //управляем, что выводим и как
  */
 	render() {
 		//show header
+
 		if (this._header != '') {
 			const header = document.createElement('h1')
 			header.textContent = this._header
@@ -65,12 +66,15 @@ _	* @param[array] atribute //управляем, что выводим и как
 			document.querySelector(this._element).append(header)
 		}
 		//show table
+
 		const table = document.createElement('table')
 		this._tableClass.forEach(cssClass => {
 			table.classList.add(cssClass)
 		})
 		//create table header
+
 		let trHeader = document.createElement('tr')
+
 		for (let key in this.atribute) {
 			let th = document.createElement('th')
 			if (this.atribute[key].label) {
@@ -80,7 +84,30 @@ _	* @param[array] atribute //управляем, что выводим и как
 			}
 			trHeader.append(th)
 		}
+
 		table.append(trHeader)
+		// draw table 
+		for ( let i = 0; i < this.data.length; i++ ) {
+			let dataArr = this.data[i]
+			let tr = document.createElement('tr')
+			for (let key in this.atribute ) {
+				let td = document.createElement('td')
+				let value = dataArr[key]
+				//есть ли функция в value
+				if ( this.atribute[key].value ) {
+					value = this.atribute[key].value(dataArr)
+				} 
+				//атрибут src
+				if ( this.atribute[key].src ) {
+					td.innerHTML = value
+				} else {
+					td.textContent = value
+				}
+				tr.append(td)
+			}
+			table.append(tr)
+		}
+
 		document.querySelector(this._element).append(table)
 
 

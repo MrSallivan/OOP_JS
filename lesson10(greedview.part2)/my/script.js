@@ -5,7 +5,7 @@ const dataExample = [
 		country: 'Germany'
 	},
 	{
-		company: 'Centro comercial Moctezuma',
+		company: 'Centro comercial <b>Moctezuma</b>',
 		chef: 'Francisco Chang',
 		country: 'Mexico'
 	},
@@ -27,8 +27,8 @@ const dataExample = [
 ];
 
 let gridView = new GridView()
-gridView.header = 'hello'
-gridView.headerClass = ['header', 'big']
+// gridView.header = 'hello'
+// gridView.headerClass = ['header', 'big']
 gridView.data = dataExample
 gridView.atribute = {
     'company': {
