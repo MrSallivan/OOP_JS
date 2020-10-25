@@ -29,16 +29,23 @@ class Validate {
 	}
 
 	static toMoney(b) {
-		let x = String(b).split('')
-		let c = 0
-		for (let i = x.length - 1; i >= 0; i--) {
-			c++
-			if ((c % 3) == 0) {
-				x.splice(i, 0, ' ')
-			}
+		let x = String(b)
+		let drob = x.indexOf('.')
+		if ( drob == -1 ) {
+			let conc = ".00"
 		}
-		let rez = x.join('') + ".00"
+
+
+		// let x = String(b).split('')
+		// let c = 0
+		// for (let i = x.length - 1; i >= 0; i--) {
+		// 	c++
+		// 	if ((c % 3) == 0) {
+		// 		x.splice(i, 0, ' ')
+		// 	}
+		// }
+		// let rez = x.join('') + ".00"
 		
-		return rez
+		// return rez
 	}
 }
