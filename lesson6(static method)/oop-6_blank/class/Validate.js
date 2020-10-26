@@ -31,21 +31,30 @@ class Validate {
 	static toMoney(b) {
 		let x = String(b)
 		let drob = x.indexOf('.')
-		if ( drob == -1 ) {
-			let conc = ".00"
+		let rez = ''
+		let conez = ''
+		let xcel = ''
+		let str
+		let c = 0
+		if (drob == -1) {
+			conez += ".00"
+			xcel = x
+		} else {
+			for (let i = 0; i < drob; i++) {
+				xcel += x[i]
+			}
+			for (let i = drob; i <= x.length - 1; i++) {
+				conez += x[i]
+			}
 		}
-
-
-		// let x = String(b).split('')
-		// let c = 0
-		// for (let i = x.length - 1; i >= 0; i--) {
-		// 	c++
-		// 	if ((c % 3) == 0) {
-		// 		x.splice(i, 0, ' ')
-		// 	}
-		// }
-		// let rez = x.join('') + ".00"
-		
-		// return rez
+		str = xcel.split('')
+		for (let i = str.length - 1; i >= 0; i--) {
+			c++
+			if ((c % 3) == 0) {
+				str.splice(i, 0, ' ')
+			}
+		}
+		rez = str.join('') + conez
+		return rez
 	}
 }
