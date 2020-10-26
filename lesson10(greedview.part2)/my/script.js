@@ -27,13 +27,13 @@ const dataExample = [
 ];
 
 let gridView = new GridView()
-// gridView.header = 'hello'
-// gridView.headerClass = ['header', 'big']
+gridView.header = 'Companys table'
+gridView.headerClass = ['header', 'big']
 gridView.data = dataExample
 gridView.atribute = {
     'company': {
         'label': 'Компания',
-        'src': 'html',
+        'src': 'html'
     },
     'chef': {
         'label': 'Директор',
