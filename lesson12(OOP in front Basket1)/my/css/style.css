@@ -1,0 +1,29 @@
+.col {
+    display: flex;
+    align-items: stretch;
+}
+.package {
+    flex-basis: 100%;
+}
+.goods img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    min-height:  222px;
+}
+
+.goods h2 {
+    font-size: 22px;
+    margin: 0 0 20px 0;
+    line-height: 100%;
+}
+
+.goods .package.featured.text-center {
+    text-align: center;
+}
+
+.goods .package.featured p.price {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 20px 0;
+}

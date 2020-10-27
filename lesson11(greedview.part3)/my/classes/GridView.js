@@ -21,7 +21,7 @@ _	* @param[array] atribute //управляем, что выводим и как
 * Method set Header
 */
 
-	set header(header) {
+	setHeader(header) {
 		if (typeof header === 'string' && header.trim() != '') {
 			this._header = header.trim()
 			return true
@@ -32,7 +32,7 @@ _	* @param[array] atribute //управляем, что выводим и как
 /**
 * Method set headerClass
 */
-	set headerClass(headerClass) {
+	setHeaderClass(headerClass) {
 		if (typeof headerClass === 'object') {
 			this._headerClass = headerClass
 			return true
@@ -42,8 +42,8 @@ _	* @param[array] atribute //управляем, что выводим и как
 
 /**
 * Method set element
-*/k
-	set element(element) {
+*/
+	setElement(element) {
 		if (document.querySelector(element)) {
 			this._element = element
 			return true
@@ -54,9 +54,13 @@ _	* @param[array] atribute //управляем, что выводим и как
 /**
  * Method for show GridViewTable
  */
-	render() {
+	render(data) {
+		this.setElement(data.element)
+		this.setHeaderClass(data.headerClass)
+		this.setHeader(data.header)
+		this.data = data.data
+		this.atribute = data.atribute
 		//show header
-
 		if (this._header != '') {
 			const header = document.createElement('h1')
 			header.textContent = this._header
