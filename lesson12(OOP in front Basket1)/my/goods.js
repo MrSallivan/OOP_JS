@@ -57,6 +57,17 @@ for (let key in cart) {
 
 	document.querySelector('.goods').addEventListener('click', event => {
 		if (event.target.classList.contains('to-cart')) {
-			
+			let articul = event.target.dataset.articul
+			if (data[articul] !== undefined) {
+				data[articul]['count']++
+			} else {
+				data[articul] = cart[articul]
+				data[articul]['count'] = 1
+			}
+			localStorage.setItem('cart', JSON.stringify(data))
 		}
+		
 	})
+
+	
+	
