@@ -27,3 +27,21 @@
     font-weight: 800;
     margin: 20px 0;
 }
+table.cart {
+    border-collapse: collapse;
+    border: 1ps solid  #666;
+}
+
+table.cart td {
+    border: 1px solid #666;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+table.cart img {
+    width: 48px;
+}
+
+table.cart span.total {
+    font-weight: 800;
+}

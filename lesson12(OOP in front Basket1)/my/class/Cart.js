@@ -31,7 +31,7 @@ class Cart {
 	getTotal() {
 		let total = 0
 		for (let key in this.items) {
-			total += this.items[key]['cout'] * this.items[key]['price']
+			total += this.items[key]['count'] * this.items[key]['price']
 		}
 		return total
 	}
@@ -40,7 +40,7 @@ class Cart {
 		table.classList.add(this.cartClass)
 		for (let key in this.items) {
 			let goods = this.items[key]
-			//ltkftv cnhjre
+			//
 			const tr = document.createElement('tr')
 			//делаем кнопку удалить
 			let td = document.createElement('td')
@@ -57,8 +57,43 @@ class Cart {
 			img.src = goods.image
 			td.append(img)
 			tr.append(td)
-
-
+			//делаем название товара
+			td = document.createElement('td')
+			let caption = document.createElement('h4')
+			caption.innerHTML = goods.name
+			td.append(caption)
+			tr.append(td)
+			//делаем минус
+			td = document.createElement('td')
+			button = document.createElement('button')
+			button.classList.add(this.minusClass)
+			button.classList.add('button-primary')
+			button.innerHTML = '-'
+			button.setAttribute('data-articul', key)
+			td.append(button)
+			tr.append(td)
+			//делаем кол-во
+			td = document.createElement('td')
+			let vol = document.createElement('span')
+			vol.innerHTML = goods.count
+			td.append(vol)
+			tr.append(td)
+			//делаем плюс
+			td = document.createElement('td')
+			button = document.createElement('button')
+			button.classList.add(this.plusClass)
+			button.classList.add('button-primary')
+			button.innerHTML = '+'
+			button.setAttribute('data-articul', key)
+			td.append(button)
+			tr.append(td)
+			//делаем тотал
+			td = document.createElement('td')
+			let smtotal = document.createElement('span')
+			smtotal.innerHTML = goods.count * goods.price + ' ' + this.currency
+			td.append(smtotal)
+			tr.append(td)
+			//
 			table.append(tr)
 		}
 		let tr = document.createElement('tr')
